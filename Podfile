@@ -7,6 +7,5 @@ target 'pointsCountdown' do
 
   # Pods for pointsCountdown
 
-  pod 'DLRadioButton', '~> 1.4'
 
 end

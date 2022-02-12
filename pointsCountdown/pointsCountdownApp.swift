@@ -11,7 +11,8 @@ import SwiftUI
 struct pointsCountdownApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let everyDayPointsCounter = EveryDayPointsCounter()
+            ContentView().environmentObject(everyDayPointsCounter)
             
         }
     }

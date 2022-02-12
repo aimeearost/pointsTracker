@@ -49,7 +49,7 @@ struct WeightView: View {
 
     var inputView: some View {
         HStack {
-            TextField("Food Diary", text: $weightText)
+            TextField("Weight", text: $weightText)
                 .padding(.leading, 25)
                 .clipped()
                 .foregroundColor(.cyan)

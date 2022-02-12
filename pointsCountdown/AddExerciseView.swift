@@ -114,6 +114,7 @@ struct AddExerciseView: View {
                                                         exercisePointsAnswer = String(roundedAnswer)
                                                         print(selectedIntensity)
                                                         addedExercisePointsTallyAsInt = addedExercisePointsTallyAsInt + roundedAnswer
+                                                        print(addedExercisePointsTallyAsInt)
 
 
                                                     }

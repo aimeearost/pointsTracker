@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @EnvironmentObject var everyDayPointsCounter: EveryDayPointsCounter
+
     let columns = [GridItem(.fixed(25)),
                    GridItem(.fixed(25)),
                    GridItem(.fixed(25)),
@@ -54,44 +56,96 @@ struct ContentView: View {
     @State var addedAmount = 0
     @State var finalAnswer = 0
 
+    @AppStorage("everyDayPointsCounterValue") var everyDayPointsCounterValue: Int = 0
+    @AppStorage("weekPointsCounterValue") var weekPointsCounterValue: Int = 0
+
+
     let date = DateFormatter.localizedString(from: Date(), dateStyle: .full, timeStyle: .none)
 
     
 
     var field: String = ""
 
+    @State private var showingAlert = false
+
+
+    var addAlert: Alert {
+
+
+        Alert(title: Text("Hey!"),
+              message: Text("Do you want to carry-over points to weekly?"),
+              primaryButton: .destructive(Text("Yes"), action: carryOver),
+              secondaryButton: .cancel())
+    }
+
+
+    func carryOver() {
+
+
+        if everyDayPointsCounter.everyDayPointsCounterValue > 0 && everyDayPointsCounter.everyDayPointsCounterValue < 5 {
+
+            everyDayPointsCounter.weekPointsCounterValue = everyDayPointsCounter.weekPointsCounterValue + everyDayPointsCounter.everyDayPointsCounterValue
+
+            } else if everyDayPointsCounter.everyDayPointsCounterValue >= 5 {
+                everyDayPointsCounter.weekPointsCounterValue = everyDayPointsCounter.weekPointsCounterValue + 4
+
+            } else {
+            everyDayPointsCounter.everyDayPointsCounterValue = 16
+
+        }
+
+
+    }
+
     var body: some View {
         VStack {
             HeaderView()
             VStack {
 
+
                 VStack {
-                    Stepper("Daily", value: $myPointsAsInt, in: 0...130).padding(.trailing, 30).padding(.leading, 30).foregroundColor(.cyan).font(.title3)
+                    Stepper("Daily", value: $everyDayPointsCounterValue, in: 0...130).padding(.trailing, 30).padding(.leading, 30).foregroundColor(.cyan).font(.title3)
                         .padding(.bottom, 10)
                         .frame(width: 300, height: 35, alignment: .center)
                     HStack {
                         Spacer()
-                        Text("Balance:  \(myPointsAsInt)").foregroundColor(.red).font(.subheadline)
+                        Text("Balance:  \(everyDayPointsCounterValue)").foregroundColor(.red).font(.subheadline)
                         Spacer()
                         Button("Reset") {
-                            myPointsAsInt = 16
+                            showingAlert = true
+//                            everyDayPointsCounterValue = 16
+//                            myPointsAsInt = 16
                         }.padding(5)
                             .font(.footnote)
                             .foregroundColor(.cyan).border(Color.red, width: 0.75)
+                            .alert("Do you want to carry-over points to weekly?", isPresented: $showingAlert) {
+                                Button("No") {
+                                    everyDayPointsCounterValue = 16
+                                    showingAlert = false
+                                }
+                                Button("Yes") {
+                                    carryOver()
+                                    everyDayPointsCounter.everyDayPointsCounterValue = 16
+
+
+                                }
+                            }
+
                         Spacer()
                     }
                 }
                 .padding(.bottom, 15)
 
                 VStack {
-                    Stepper("Weekly", value: $myWeeklyPointsAsInt, in: 0...130).padding(.trailing, 30).padding(.leading, 30).foregroundColor(.cyan).font(.title3)
+                    Stepper("Weekly", value: $weekPointsCounterValue, in: 0...130).padding(.trailing, 30).padding(.leading, 30).foregroundColor(.cyan).font(.title3)
                         .padding(.bottom, 10)
                         .frame(width: 300, height: 35, alignment: .center)
                     HStack {
                         Spacer()
-                        Text("Balance:  \(myWeeklyPointsAsInt)").font(.subheadline).foregroundColor(.red)
+                        Text("Balance:  \(weekPointsCounterValue)").font(.subheadline).foregroundColor(.red)
                         Spacer()
                         Button("Reset") {
+                            weekPointsCounterValue = 35
                             myWeeklyPointsAsInt = 35
                         }.padding(5)
                             .font(.footnote)
@@ -199,6 +253,9 @@ struct CircleView: View {
 
 // MARK: - HeaderView
 struct HeaderView: View {
+
+    @EnvironmentObject var everyDayPointsCounter: EveryDayPointsCounter
+
     var body: some View {
         Text("Track Your Points")
             .padding(.top, 25)
@@ -209,10 +266,14 @@ struct HeaderView: View {
             .padding(.leading, 20)
             .padding(.trailing, 20)
     }
+    
 }
 
 // MARK: - ButtonView
 struct ButtonView: View {
+
+    @EnvironmentObject var everyDayPointsCounter: EveryDayPointsCounter
+
 
     @State private var isPresented: Bool = false
     @State private var dismissed: Bool = false
@@ -237,6 +298,8 @@ struct ButtonView: View {
     @State private var dismissed7: Bool = false
 
     @State var addedExercisePointsTallyAsInt = 0
+
+
 
     var body: some View {
         Spacer()
@@ -344,6 +407,8 @@ struct ButtonView: View {
 
         Spacer()
     }
+
+
 }
 
 

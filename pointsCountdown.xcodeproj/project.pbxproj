@@ -20,6 +20,7 @@
 		73BC5A53279E168D0086D432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC5A52279E168D0086D432 /* Assets.xcassets */; };
 		73BC5A56279E168D0086D432 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC5A55279E168D0086D432 /* Preview Assets.xcassets */; };
 		73BC5A5D279E340B0086D432 /* buttonStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC5A5C279E340A0086D432 /* buttonStructs.swift */; };
+		73CC9FCF27B72D6B00112378 /* CounterClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CC9FCE27B72D6B00112378 /* CounterClasses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		73BC5A52279E168D0086D432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73BC5A55279E168D0086D432 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		73BC5A5C279E340A0086D432 /* buttonStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonStructs.swift; sourceTree = "<group>"; };
+		73CC9FCE27B72D6B00112378 /* CounterClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterClasses.swift; sourceTree = "<group>"; };
 		DA59E8C8F392E50904E44E6F /* Pods-pointsCountdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pointsCountdown.debug.xcconfig"; path = "Target Support Files/Pods-pointsCountdown/Pods-pointsCountdown.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				7398EF6527A9F2A70089EB44 /* RecipeIdeaViewPage.swift */,
 				73BC5A52279E168D0086D432 /* Assets.xcassets */,
 				73BC5A54279E168D0086D432 /* Preview Content */,
+				73CC9FCE27B72D6B00112378 /* CounterClasses.swift */,
 			);
 			path = pointsCountdown;
 			sourceTree = "<group>";
@@ -126,7 +129,6 @@
 				73BC5A47279E168B0086D432 /* Sources */,
 				73BC5A48279E168B0086D432 /* Frameworks */,
 				73BC5A49279E168B0086D432 /* Resources */,
-				0954F2890C8D9D05782E348B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,23 +185,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0954F2890C8D9D05782E348B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-pointsCountdown/Pods-pointsCountdown-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-pointsCountdown/Pods-pointsCountdown-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pointsCountdown/Pods-pointsCountdown-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7F830427E20314F5F8A7C4BF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +219,7 @@
 				7398EF6627A9F2A70089EB44 /* RecipeIdeaViewPage.swift in Sources */,
 				73BC5A51279E168B0086D432 /* PointsView.swift in Sources */,
 				7347439A27A9AA6200B5DB17 /* FoodDiaryView.swift in Sources */,
+				73CC9FCF27B72D6B00112378 /* CounterClasses.swift in Sources */,
 				73926EFF279F20EF00FBE358 /* ContentView.swift in Sources */,
 				73BC5A4F279E168B0086D432 /* pointsCountdownApp.swift in Sources */,
 				73BC5A5D279E340B0086D432 /* buttonStructs.swift in Sources */,

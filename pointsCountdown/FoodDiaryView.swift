@@ -38,6 +38,9 @@ struct FoodDiaryView : View {
 
     @State var itemToDelete: NoteItem?
 
+    @EnvironmentObject var everyDayPointsCounter: EveryDayPointsCounter
+
+
 
     var body: some View {
         VStack {
@@ -72,6 +75,8 @@ struct FoodDiaryView : View {
 
 
     var inputView: some View {
+
+        
         VStack {
 
             HStack {
@@ -82,7 +87,6 @@ struct FoodDiaryView : View {
                     .foregroundColor(.red)
                     .keyboardType(.numberPad)
                 Button(action: didTapAddTask, label: {
-
                     Text("Add Item") }).padding(8).foregroundColor(.cyan)
             }
 
@@ -106,9 +110,15 @@ struct FoodDiaryView : View {
     }
 
     func didTapAddTask() {
+        if everyDayPointsCounter.everyDayPointsCounterValue >= Int(points) ?? 0 {
+            everyDayPointsCounter.everyDayPointsCounterValue = everyDayPointsCounter.everyDayPointsCounterValue - (Int(points) ?? 0)
+        } else {
+            everyDayPointsCounter.everyDayPointsCounterValue = 0
+        }
         let id = items.reduce(0) { max($0, $1.id) } + 1
         items.insert(NoteItem(id: id, text: taskText, points: points), at: 0)
         taskText = ""
+        points = ""
         save()
     }
 

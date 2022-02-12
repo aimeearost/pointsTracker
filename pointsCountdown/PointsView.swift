@@ -238,6 +238,51 @@ struct PointsView: View {
                 }
             }.padding(.bottom, 50)
                 .foregroundColor(.cyan)
+            VStack {
+                Text("ZERO POINT FOODS")
+                    .font(.subheadline)
+                    .foregroundColor(.red)
+                Text("POTATOES")
+                    .font(.subheadline)
+                    .foregroundColor(.red)
+                ScrollView {
+
+                    Group {
+                        Text("Baby potatoes")
+                        Text("Baked potatoes")
+                        Text("Baked sweet potatoes")
+                        Text("Canned sweet potato, unsweetened")
+                        Text("Cassava")
+                        Text("Fingerling potatoes")
+                        Text("Idaho")
+                        Text("Japanese sweet")
+                        Text("Mashed, plain")
+                        Text("Mashed sweet, plain")
+                    }
+                    Group {
+                        Text("New")
+                        Text("Oven-roasted potato wedges")
+                        Text("Oven-roasted sweet potato fries or wedges")
+                        Text("Purple potatoes")
+                        Text("Red potatoes")
+                        Text("Roasted potatoes, no oil")
+                        Text("Russet potatoes")
+                        Text("Sweet potatoes")
+                        Text("Taro")
+                        Text("White potatoes")
+                    }
+                    Group {
+                        Text("Yams")
+                        Text("Yellow potatoes")
+                        Text("Yucca")
+                        Text("Yukon gold potatoes")
+
+                    }
+
+                }
+            }.padding(.bottom, 50)
+                .foregroundColor(.cyan)
+
 //                .tabItem {
 //                    Image(systemName: "2.square.fill")
 //                    Text("Vegetables")
@@ -371,18 +416,56 @@ struct PointsView: View {
                 }
             }.padding(.bottom, 50)
                 .foregroundColor(.cyan)
-      
-            
-            Text("Beans/Legumes")
 
-            Text("Another Tab")
+                        VStack {
+                            Text("ZERO POINT FOODS")
+                                .font(.subheadline)
+                                .foregroundColor(.red)
+                            Text("Dairy/Eggs/Tofu")
+                                .font(.subheadline)
+                                .foregroundColor(.red)
+                            ScrollView {
 
-            Text("The Last Tab")
+                                Group {
+                                    Text("Cottage cheese")
+                                    Text("plain, nonfa")
+                                    Text("Greek yogurt")
+                                    Text("plain, nonfa")
+                                    Text("Plain yogurt, nonfa")
+                                    Text("Quark, plain up to 1% fa")
+                                    Text("Soy yogurt, plai")
+                                    Text("Cottage cheese plain, nonfat")
+                                }
+                                Group {
+                                    Text("Egg substitute")
+                                    Text("Egg whites")
+                                    Text("Egg yolks")
+                                    Text("Eggs")
+
+                                    Text("Firm tofu")
+                                    Text("Silken tofu")
+                                    Text("Smoked tofu")
+                                    Text("Soft tofu")
+                                    Text("Tempeh")
+                                }
+
+
+                            }
+                        }.padding(.bottom, 50)
+                    .foregroundColor(.cyan)
+                    .accentColor(.red)
+
+
+
         }
         .tabViewStyle(PageTabViewStyle())
         .font(.headline)
-        .accentColor(.red)
         .padding()
+        .accentColor(.red)
+        .onAppear() {
+            setupAppearance()
+        }
+        
     }
 
 
@@ -391,6 +474,12 @@ struct PointsView: View {
             PointsView()
         }
     }
+
+    func setupAppearance() {
+      UIPageControl.appearance().currentPageIndicatorTintColor = .cyan
+      UIPageControl.appearance().pageIndicatorTintColor = UIColor.cyan.withAlphaComponent(0.2)
+    }
+
 }
 
 
