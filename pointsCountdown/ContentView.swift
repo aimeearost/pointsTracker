@@ -75,8 +75,7 @@ struct ContentView: View {
         Alert(title: Text("Hey!"),
               message: Text("Do you want to carry-over points to weekly?"),
               primaryButton: .destructive(Text("Yes"), action: carryOver),
-              secondaryButton: .cancel())
-    }
+              secondaryButton: .cancel())    }
 
 
     func carryOver() {
@@ -100,6 +99,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HeaderView()
+            
             VStack {
 
 
@@ -119,18 +119,21 @@ struct ContentView: View {
                             .font(.footnote)
                             .foregroundColor(.cyan).border(Color.red, width: 0.75)
                             .alert("Do you want to carry-over points to weekly?", isPresented: $showingAlert) {
-                                Button("No") {
-                                    everyDayPointsCounterValue = 16
-                                    showingAlert = false
-                                }
                                 Button("Yes") {
                                     carryOver()
                                     everyDayPointsCounter.everyDayPointsCounterValue = 16
 
+                                }
+
+                                Button("No") {
+                                    everyDayPointsCounterValue = 16
+                                    showingAlert = false
+                                }
+                                Button("Cancel") {
+                                    everyDayPointsCounter.everyDayPointsCounterValue = everyDayPointsCounter.everyDayPointsCounterValue
 
                                 }
-                            }
-
+                            }.accentColor(.cyan)
                         Spacer()
                     }
                 }
@@ -448,3 +451,5 @@ struct ButtonView: View {
 //                            Text("\(date)").font(.subheadline).foregroundColor(.cyan)
 //
 //                        }.padding(.bottom, 25)
+
+
