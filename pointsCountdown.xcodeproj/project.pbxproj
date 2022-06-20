@@ -15,6 +15,8 @@
 		7398EF6427A9B7CB0089EB44 /* CommonFoodsPointValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EF6327A9B7CB0089EB44 /* CommonFoodsPointValueView.swift */; };
 		7398EF6627A9F2A70089EB44 /* RecipeIdeaViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EF6527A9F2A70089EB44 /* RecipeIdeaViewPage.swift */; };
 		7398EF6827ADC6FA0089EB44 /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398EF6727ADC6FA0089EB44 /* WeightView.swift */; };
+		73A5377B28610905000E1428 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A5377A28610905000E1428 /* ChartView.swift */; };
+		73A5377E28610C35000E1428 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 73A5377D28610C35000E1428 /* SwiftUICharts */; };
 		73BC5A4F279E168B0086D432 /* pointsCountdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC5A4E279E168B0086D432 /* pointsCountdownApp.swift */; };
 		73BC5A51279E168B0086D432 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC5A50279E168B0086D432 /* PointsView.swift */; };
 		73BC5A53279E168D0086D432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC5A52279E168D0086D432 /* Assets.xcassets */; };
@@ -33,6 +35,7 @@
 		7398EF6327A9B7CB0089EB44 /* CommonFoodsPointValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFoodsPointValueView.swift; sourceTree = "<group>"; };
 		7398EF6527A9F2A70089EB44 /* RecipeIdeaViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIdeaViewPage.swift; sourceTree = "<group>"; };
 		7398EF6727ADC6FA0089EB44 /* WeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
+		73A5377A28610905000E1428 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		73BC5A4B279E168B0086D432 /* pointsCountdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pointsCountdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BC5A4E279E168B0086D432 /* pointsCountdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsCountdownApp.swift; sourceTree = "<group>"; };
 		73BC5A50279E168B0086D432 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FB235A111A0A2D2D5ABA74F /* Pods_pointsCountdown.framework in Frameworks */,
+				73A5377E28610C35000E1428 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,7 @@
 				7347439927A9AA6100B5DB17 /* FoodDiaryView.swift */,
 				7398EF6327A9B7CB0089EB44 /* CommonFoodsPointValueView.swift */,
 				7398EF6727ADC6FA0089EB44 /* WeightView.swift */,
+				73A5377A28610905000E1428 /* ChartView.swift */,
 				7398EF6527A9F2A70089EB44 /* RecipeIdeaViewPage.swift */,
 				73BC5A52279E168D0086D432 /* Assets.xcassets */,
 				73BC5A54279E168D0086D432 /* Preview Content */,
@@ -135,6 +140,9 @@
 			dependencies = (
 			);
 			name = pointsCountdown;
+			packageProductDependencies = (
+				73A5377D28610C35000E1428 /* SwiftUICharts */,
+			);
 			productName = pointsCountdown;
 			productReference = 73BC5A4B279E168B0086D432 /* pointsCountdown.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +171,9 @@
 				Base,
 			);
 			mainGroup = 73BC5A42279E168B0086D432;
+			packageReferences = (
+				73A5377C28610C35000E1428 /* XCRemoteSwiftPackageReference "chartview" */,
+			);
 			productRefGroup = 73BC5A4C279E168B0086D432 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,6 +236,7 @@
 				73BC5A5D279E340B0086D432 /* buttonStructs.swift in Sources */,
 				7347439827A744B700B5DB17 /* AddExerciseView.swift in Sources */,
 				73926F0127A0899300FBE358 /* PointsCalculatorView.swift in Sources */,
+				73A5377B28610905000E1428 /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +443,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		73A5377C28610C35000E1428 /* XCRemoteSwiftPackageReference "chartview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apppear/chartview.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		73A5377D28610C35000E1428 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73A5377C28610C35000E1428 /* XCRemoteSwiftPackageReference "chartview" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 73BC5A43279E168B0086D432 /* Project object */;
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
 
     @EnvironmentObject var everyDayPointsCounter: EveryDayPointsCounter
+    
 
     let columns = [GridItem(.fixed(25)),
                    GridItem(.fixed(25)),
@@ -80,22 +81,22 @@ struct ContentView: View {
 
     func carryOver() {
 
-//
-//        if everyDayPointsCounter.everyDayPointsCounterValue > 0 && everyDayPointsCounter.everyDayPointsCounterValue < 5 {
-//
-//            everyDayPointsCounter.weekPointsCounterValue = everyDayPointsCounter.weekPointsCounterValue + everyDayPointsCounter.everyDayPointsCounterValue
-//            everyDayPointsCounter.everyDayPointsCounterValue = 16
-//
-//
-//            } else if everyDayPointsCounter.everyDayPointsCounterValue >= 5 {
-//                everyDayPointsCounter.weekPointsCounterValue = everyDayPointsCounter.weekPointsCounterValue + 4
-//                everyDayPointsCounter.everyDayPointsCounterValue = 16
-//
-//
-//            } else {
-//            everyDayPointsCounter.everyDayPointsCounterValue = 16
-//
-//        }
+
+        if everyDayPointsCounter.everyDayPointsCounterValue > 0 && everyDayPointsCounter.everyDayPointsCounterValue < 5 {
+
+            everyDayPointsCounter.weekPointsCounterValue = everyDayPointsCounter.weekPointsCounterValue + everyDayPointsCounter.everyDayPointsCounterValue
+            everyDayPointsCounter.everyDayPointsCounterValue = 16
+
+
+            } else if everyDayPointsCounter.everyDayPointsCounterValue >= 5 {
+                everyDayPointsCounter.weekPointsCounterValue = everyDayPointsCounter.weekPointsCounterValue + 4
+                everyDayPointsCounter.everyDayPointsCounterValue = 16
+
+
+            } else {
+            everyDayPointsCounter.everyDayPointsCounterValue = 16
+
+        }
 
 
         if everyDayPointsCounterValue > 0 && everyDayPointsCounterValue < 5 {
@@ -142,7 +143,7 @@ struct ContentView: View {
                             .alert("Do you want to carry-over points to weekly?", isPresented: $showingAlert) {
                                 Button("Yes") {
                                     carryOver()
-//                                    everyDayPointsCounter.everyDayPointsCounterValue = 16
+                                    everyDayPointsCounter.everyDayPointsCounterValue = 16
 
                                 }
 
@@ -151,8 +152,8 @@ struct ContentView: View {
                                     showingAlert = false
                                 }
                                 Button("Cancel") {
-//                                    everyDayPointsCounter.everyDayPointsCounterValue = everyDayPointsCounter.everyDayPointsCounterValue
-                                   everyDayPointsCounterValue = everyDayPointsCounterValue
+                                    everyDayPointsCounter.everyDayPointsCounterValue = everyDayPointsCounter.everyDayPointsCounterValue
+//                                   everyDayPointsCounterValue = everyDayPointsCounterValue
 
                                 }
                             }.accentColor(.cyan)
@@ -323,6 +324,7 @@ struct ButtonView: View {
 
     @State private var isPresented7: Bool = false
     @State private var dismissed7: Bool = false
+
 
     @State var addedExercisePointsTallyAsInt = 0
 
